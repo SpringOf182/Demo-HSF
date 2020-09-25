@@ -48,11 +48,6 @@
       <artifactId>spring-context</artifactId>
       <version>5.2.6.RELEASE</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>5.2.6.RELEASE</version>
-    </dependency>
 
     <!--web.xml中web.context.ContextLoaderListener的依赖-->
     <dependency>
@@ -72,13 +67,7 @@
       <version>3.1.0.RELEASE</version>
     </dependency>
 
-    <!--<dependency>
-      <groupId>com.mchange</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.5.2</version>
-    </dependency>-->
-
-    <!--阿里巴巴高新能数据源com.alibaba.druid.pool.DruidDataSource的jar包配置-->
+    <!--阿里巴巴高新能数据源com.alibaba.druid.pool.DruidDataSource的jar包配置——c3p0不兼容的解决方案-->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
@@ -94,8 +83,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.11</version>
     </dependency>
-
-
 
     <!-- 添加 servlet 的依赖 -->
     <dependency>
@@ -123,6 +110,33 @@
       <artifactId>edas-sdk</artifactId>
       <version>1.8.1</version>
     </dependency>
+
+    <!--quartz 定时任务依赖-->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>5.2.6.RELEASE</version>
+    </dependency>
+
+    <!--解决SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>1.7.2</version>
+    </dependency>
+
+    <!--尝试解决failed to add tracing to RxJava.-->
+    <dependency>
+      <groupId>io.reactivex</groupId>
+      <artifactId>rxjava</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+
 
   </dependencies>
 

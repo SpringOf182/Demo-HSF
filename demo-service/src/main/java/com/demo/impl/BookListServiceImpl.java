@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Helen
+ */
 @Service
 public class BookListServiceImpl implements BookListService {
 
@@ -35,7 +38,7 @@ public class BookListServiceImpl implements BookListService {
     }
 
     @Override
-    public Boolean changeRemainNum(Integer bookID,Integer newNumber) {
-        return bookDAO.changeRemainNum(bookID,newNumber);
+    public Boolean changeRemainNum(Integer bookId,Integer newNumber) {
+        return bookDAO.changeRemainNum(bookId,newNumber);
     }
 }

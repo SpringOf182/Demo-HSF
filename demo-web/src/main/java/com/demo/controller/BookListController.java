@@ -10,17 +10,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Ying
+ */
 @RestController
 public class BookListController {
 
     @Autowired
     @Setter
     BookListService bookListService ;
-    /*@ModelAttribute(value = "book")
-    public Book book() {
-        return new Book();
-    };*/
-
 
     @RequestMapping(value = "/getAll.action",method = RequestMethod.GET)
     @ResponseBody
@@ -76,16 +74,9 @@ public class BookListController {
     @RequestMapping(value = "/deleteBook.action",method = RequestMethod.POST)
     @ResponseBody
     public List<Book> deleteBook(@RequestBody Integer bookId){
-        //Integer bookId = Integer.parseInt(request.getParameter("bookId").trim());
         bookListService.deleteBook(bookId);
         return bookListService.getAll();
     }
-    /*public String deleteBook(Integer bookID,Model model){
-        bookListService.deleteBook(bookID);
-        List<Book> bookList = bookListService.getAll();
-        model.addAttribute("bookList", bookList);
-        return "show.html";//参数为指定页面
-    }*/
 
     @RequestMapping(value = "/changeRemainNum.action",method = RequestMethod.POST)
     @ResponseBody
