@@ -2,15 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <import resource="spring-dao.xml"/>
+    <import resource="spring-quartz.xml"/>
     <import resource="classpath:hsf.provider/hsf-provider.xml"/>
 
     <!-- 扫描service包下所有使用注解的类型 -->
@@ -23,6 +23,8 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <!-- 配置基于注解的声明式事务 -->
+    <!-- 配置基于注解的声明式事务-->
     <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <task:annotation-driven />
 </beans>

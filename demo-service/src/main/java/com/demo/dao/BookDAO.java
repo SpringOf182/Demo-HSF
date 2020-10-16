@@ -2,12 +2,14 @@ package com.demo.dao;
 
 import com.demo.pojo.Book;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @author Helen
  */
+@Repository
 public interface BookDAO {
     /**获取当前全部书籍列表
      * @return List<Book>
